@@ -6,11 +6,13 @@ namespace hw1.tests
     public class CalculatorTests
     {
         [Theory]
-        [InlineData(1, "+", 1, 2)]
-        [InlineData(1, "-", 1, 0)]
-        [InlineData(5, "*", 1, 5)]
-        [InlineData(6, "/", 3, 2)]
-        public void Should_Calculate_Correctly_WhenRightArguments(int val1, string operation,
+        [InlineData(1, "+", 3, 4)]
+        [InlineData(2, "-", 2, 0)]
+        [InlineData(3, "*", 1, 3)]
+        [InlineData(4, "/", 2, 2)]
+        [InlineData(0, "+", 0, 0)]
+        [InlineData(1, "/", 1, 1)]
+        public void Calculate_ifArgumentsRight(int val1, string operation,
             int val2, int expected)
         {
             var res = Calculator.Calculate(val1, operation, val2);
