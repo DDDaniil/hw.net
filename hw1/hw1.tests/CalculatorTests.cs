@@ -12,7 +12,7 @@ namespace hw1.tests
         [InlineData(4, "/", 2, 2)]
         [InlineData(0, "+", 0, 0)]
         [InlineData(1, "/", 1, 1)]
-        public void Calculate_ifArgumentsRight(int val1, string operation,
+        public void Calculate_IfArgumentsRight(int val1, string operation,
             int val2, int expected)
         {
             var res = Calculator.Calculate(val1, operation, val2);
@@ -30,7 +30,7 @@ namespace hw1.tests
         {
             var res = Calculator.Calculate(val1, operation, val2);
             
-            Assert.Equal(expected,res);
+            Assert.Equal(expected, res);
         }
     }
 }

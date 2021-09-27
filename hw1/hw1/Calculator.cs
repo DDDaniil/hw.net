@@ -2,9 +2,9 @@
 {
     public static class Calculator
     {
-        public static int Calculate(int val1, string operation, int val2)
+        public static double Calculate(double val1, string operation, double val2)
         {
-            var result = 0;
+            double result = 0;
             result = operation switch
             {
                 "+" => val1 + val2,

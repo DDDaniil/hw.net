@@ -22,7 +22,7 @@ namespace hw1.tests
         [InlineData(new[] {"", "+", "a"}, 1)]
         [InlineData(new[] {"aaaaaaa", "+", "ffffff"}, 1)]
         [InlineData(new[] {"", "+", ""}, 1)]
-        public void ParseNotRight_AndReturnsOne(string[] args, int expected)
+        public void TryToParse_WithWrongArguments(string[] args, int expected)
         {
             var actual = Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
@@ -35,7 +35,7 @@ namespace hw1.tests
         [InlineData(new[] {"77", "ololo", "77"}, 2)]
         [InlineData(new[] {"1","$","1"},2)]
         [InlineData(new[] {"2"," ","3"},2)]
-        public void ParseNotRight_AndReturnsTwo(string[] args, int expected)
+        public void TryToParse_WithWrongOperator(string[] args, int expected)
         {
             var res = Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);

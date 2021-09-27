@@ -18,8 +18,6 @@ namespace hw1.tests
         [InlineData(new[] {"3", "+", "1"}, 0)]
         public void CorrectionProgram(string[] args, int expected)
         {
-            /*var res = Parser.TryToParse(args, out var val1,
-                out var operation, out var val2);*/
             var res = Program.Main(args);
             
             Assert.Equal(expected, res);
