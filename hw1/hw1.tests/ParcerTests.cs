@@ -22,6 +22,7 @@ namespace hw1.tests
         [InlineData(new[] {"", "+", "a"}, 1)]
         [InlineData(new[] {"aaaaaaa", "+", "ffffff"}, 1)]
         [InlineData(new[] {"", "+", ""}, 1)]
+        [InlineData(new[] {"3","/","0"},1)]
         public void TryToParse_WithWrongArguments(string[] args, int expected)
         {
             var actual = Parser.TryToParse(args, out var val1,
