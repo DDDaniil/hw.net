@@ -25,19 +25,14 @@ namespace hw1
                 Console.WriteLine($"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax");
                 return 1;
             }
-            if (!isVal1Int || !isVal2Int || val2 == 0 && operation == "/") //if there are no int args
+
+            if (!ExpectedOperation.Contains(operation))
             {
-                Console.WriteLine($"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax");
-                return 1;
+                Console.WriteLine($"{args[0]} {args[1]} {args[2]} invalid arguments");
+                return 2;
             }
 
-            if (((IList) ExpectedOperation).Contains(operation)) return 0;
-            
-            Console.WriteLine(
-                $"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax. "
-                + $"Supported operations are "
-                + $"{ExpectedOperation.Aggregate((c, n) => $"{c} {n}")}");
-            return 2;//if unsupported operation
+            return 0;
 
         }
     }
