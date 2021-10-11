@@ -12,4 +12,8 @@
         <Compile Include="Calculator.fs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\hw4.tests\hw4.tests.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,7 +1,7 @@
-open System
+module hw4.Program
 
 
 [<EntryPoint>]
 let main argv =
-    let a = 0
+    let a = 1
     0 
