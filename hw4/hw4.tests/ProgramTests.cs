@@ -1,6 +1,7 @@
-﻿using Xunit;
+using Xunit;
+using hw4;
 
-namespace hw4.tests
+namespace hw4.Tests
 {
     public class ProgramTests
     {

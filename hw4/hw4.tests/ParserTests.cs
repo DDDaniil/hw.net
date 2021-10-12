@@ -1,6 +1,7 @@
-﻿using Xunit;
+﻿using hw4;
+using Xunit;
 
-namespace hw4.tests
+namespace hw4.Tests
 {
     public class ParserTests
     {
@@ -11,7 +12,7 @@ namespace hw4.tests
         
         public void ParseRight_WhenArgumentsRight(string[] args, int expected)
         {
-            var res = Parser.TryToParse(args, out var val1,
+            var res = Parser.Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
 
             Assert.Equal(expected, res);
@@ -25,7 +26,7 @@ namespace hw4.tests
         [InlineData(new[] {"3","/","0"},1)]
         public void TryToParse_WithWrongArguments(string[] args, int expected)
         {
-            var actual = Parser.TryToParse(args, out var val1,
+            var actual = Parser.Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
             
             Assert.Equal(expected, actual);
@@ -38,7 +39,7 @@ namespace hw4.tests
         [InlineData(new[] {"2"," ","3"},2)]
         public void TryToParse_WithWrongOperator(string[] args, int expected)
         {
-            var res = Parser.TryToParse(args, out var val1,
+            var res = Parser.Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
             
             Assert.Equal(expected, res);

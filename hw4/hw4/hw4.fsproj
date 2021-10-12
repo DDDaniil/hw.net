@@ -4,16 +4,13 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
         <WarnOn>3390;$(WarnOn)</WarnOn>
+        <RootNamespace>hw4</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs" />
-        <Compile Include="Parser.fs" />
         <Compile Include="Calculator.fs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="References" Version="1.2020.1015.1" />
+        <Compile Include="Parser.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
 </Project>
