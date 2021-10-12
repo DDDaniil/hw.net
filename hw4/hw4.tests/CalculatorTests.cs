@@ -16,6 +16,7 @@ namespace hw4.tests
             int val2, int expected)
         {
             var res = Calculator.Calculate(val1, operation, val2);
+            
             Assert.Equal(expected, res);
             
         }
@@ -27,7 +28,7 @@ namespace hw4.tests
         public void Calculate_IfArgumentsNotRight(int val1, string operation, 
             int val2, int expected)
         {
-            var res = Calculator
+            var res = Calculator.Calculate(val1, operation, val2);
             
             Assert.Equal(expected, res);
         }
