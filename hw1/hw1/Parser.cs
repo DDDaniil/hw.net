@@ -14,13 +14,13 @@ namespace hw1
             $"/"
         };
 
-        public static int TryToParse(string[] args, out int val1, out string operation, out int val2)
+        public static int TryToParse(string[] args, out double val1, out string operation, out double val2)
         {
-            var isVal1Int = int.TryParse(args[0], out val1);
+            var isVal1Dbl = double.TryParse(args[0], out val1);
             operation = args[1];
-            var isVal2Int = int.TryParse(args[2], out val2);
+            var isVal2Dbl = double.TryParse(args[2], out val2);
 
-            if (!isVal1Int || !isVal2Int) //if there are no int args
+            if (!isVal1Dbl || !isVal2Dbl) 
             {
                 Console.WriteLine($"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax");
                 return 1;
@@ -30,6 +30,12 @@ namespace hw1
             {
                 Console.WriteLine($"{args[0]} {args[1]} {args[2]} invalid arguments");
                 return 2;
+            }
+            
+            if (args[1] == "/" && args[2] == "0")
+            {
+                Console.WriteLine($"{args[0]}{args[1]}{args[2]} - cannot be divided by zero");
+                return 3;
             }
 
             return 0;

@@ -12,8 +12,8 @@ namespace hw1.tests
         [InlineData(4, "/", 2, 2)]
         [InlineData(0, "+", 0, 0)]
         [InlineData(1, "/", 1, 1)]
-        public void Calculate_IfArgumentsRight(int val1, string operation,
-            int val2, int expected)
+        public void Calculate_IfArgumentsRight(double val1, string operation,
+            double val2, double expected)
         {
             var res = Calculator.Calculate(val1, operation, val2);
             
@@ -25,8 +25,8 @@ namespace hw1.tests
         [InlineData(777, "", 777, 0)]
         [InlineData(77, "lol", 77, 0)]
         [InlineData(7, "7", 7, 0)]
-        public void Calculate_IfArgumentsNotRight(int val1, string operation, 
-            int val2, int expected)
+        public void Calculate_IfArgumentsNotRight(double val1, string operation, 
+            double val2, double expected)
         {
             var res = Calculator.Calculate(val1, operation, val2);
             
