@@ -9,24 +9,24 @@ namespace hw4.Tests
         [InlineData(new[] {"1", "+", "2"}, 0)]
         [InlineData(new[] {"4", "-", "1"}, 0)]
         [InlineData(new[] {"3", "+", "1"}, 0)]
+        [InlineData(new[] {"3", "/", "0"}, 3)]
         
         public void ParseRight_WhenArgumentsRight(string[] args, int expected)
         {
-            var res = Parser.Parser.TryToParse(args, out var val1,
+            var res = Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
 
             Assert.Equal(expected, res);
         }
         
         [Theory]
-        [InlineData(new[] {"Gh", "+", "3"}, 1)]
         [InlineData(new[] {"", "+", "a"}, 1)]
         [InlineData(new[] {"aaaaaaa", "+", "ffffff"}, 1)]
         [InlineData(new[] {"", "+", ""}, 1)]
-        [InlineData(new[] {"3","/","0"},1)]
+        [InlineData(new[] {"3","/","0"},3)]
         public void TryToParse_WithWrongArguments(string[] args, int expected)
         {
-            var actual = Parser.Parser.TryToParse(args, out var val1,
+            var actual = Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
             
             Assert.Equal(expected, actual);
@@ -39,7 +39,7 @@ namespace hw4.Tests
         [InlineData(new[] {"2"," ","3"},2)]
         public void TryToParse_WithWrongOperator(string[] args, int expected)
         {
-            var res = Parser.Parser.TryToParse(args, out var val1,
+            var res = Parser.TryToParse(args, out var val1,
                 out var operation, out var val2);
             
             Assert.Equal(expected, res);
