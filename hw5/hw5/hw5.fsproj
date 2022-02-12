@@ -4,12 +4,13 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
         <WarnOn>3390;$(WarnOn)</WarnOn>
+        <RootNamespace>hw5</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs" />
-        <Compile Include="Parser.fs" />
         <Compile Include="Calculator.fs" />
+        <Compile Include="Parser.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
 </Project>
