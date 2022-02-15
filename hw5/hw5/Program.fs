@@ -1,17 +1,22 @@
 module hw5.Program
+
+open hw5.Calculator
 open hw5.Parser
 
-[<EntryPoint>]
-let Main args =
-    let mutable val1 = 1
-    let mutable val2 = 2
-    let mutable operation = "+"
-    let parseRes = Parser.TryToParse args &val1 &operation &val2
-    if parseRes <> 0 then
-            printf $"Result: {Calculator.Calculate val1 operation val2}"
-            0
-    else
-        printf$"invalid arguments"
-        int parseRes
+
+let main args =
+    
+    let result = maybe{
+        let arg1, operation, arg2 = TryParseArgs args
+        let! val1 = arg1
+        let! val2 = arg2
+        let! op = operation
+        let res = Calculate val1 op val2
+        return! res
+    }
+    match result with
+    | Some result -> printfn  $"{args.[0]} {args.[1]} {args.[2]} = {result}"
+    | None result  -> printfn  $"Program has ended with {result} exception" 
+    0
         
     

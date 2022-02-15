@@ -1,11 +1,14 @@
-﻿module hw5.Calculator 
+﻿module hw5.Calculator
 
-    let Calculate val1 operation val2 =
-        let a = val1 |> int
-        let b = val2 |> int
-        match operation with
-        | "+" -> a + b
-        | "-" -> a - b
-        | "*" -> a * b
-        | "/" -> a / b
-    
+    type Valid<'a> =
+            | Some of 'a
+            | None of string
+    let Calculate (arg1: decimal) (operation: string) (arg2: decimal) =
+                match operation with
+                | "+" -> Some (arg1 + arg2)
+                | "-" -> Some (arg1 - arg2) 
+                | "*" -> Some (arg1 * arg2) 
+                | "/" ->
+                    match arg2|>int32 with
+                    | 0 -> None "DivisionByZero"
+                    | _ -> Some ( arg1 / arg2)
