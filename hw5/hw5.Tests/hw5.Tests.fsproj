@@ -4,7 +4,14 @@
         <TargetFramework>net5.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
+        <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="CalculatorTests.fs" />
+        <Compile Include="ParserTests.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
@@ -20,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\hw1\hw1.csproj" />
+      <ProjectReference Include="..\hw5\hw5.fsproj" />
     </ItemGroup>
 
 </Project>
