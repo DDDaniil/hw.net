@@ -1,4 +1,5 @@
 ﻿using System;
+using il;
 
 namespace hw1
 {
@@ -6,14 +7,20 @@ namespace hw1
     {
         public static int Main(string[] args)
         {
-            var parseRes = Parser.TryToParse(args, out var val1,
-                out var operation, out var val2);
+            if (args.Length != 3)
+            {
+                Console.WriteLine("Only two values");
+                return 4;
+            }
 
-            if (parseRes != 0) return parseRes;
+            var parserResult = ParserIL.TryToParse(args, out var arg1, out var arg2, out var op);
 
-            var result = Calculator.Calculate(val1, operation, val2);
+            if (parserResult != 0) return parserResult;
 
-            Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
+            var result = CalculatorIL.Calculate(args[1], arg1, arg2);
+
+            Console.Write($"{arg1} {op} {arg2} = {result}");
+
             return 0;
         }
     }

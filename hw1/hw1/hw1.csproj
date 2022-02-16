@@ -6,8 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\hw2IL\hw2IL.ilproj" />
+        <ProjectReference Include="..\il\il.ilproj" />
     </ItemGroup>
-    
 
 </Project>
